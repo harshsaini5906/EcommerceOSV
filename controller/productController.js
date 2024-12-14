@@ -71,7 +71,7 @@ export const productList = async (req, res) => {
 
 export const productUpdate = async (req, res) => {
   try {
-    // console.log("=====>>>")
+    
     if (!req.headers.token) {
       return res.status(400).json({ error: "Please enter the token first" });
     }

@@ -47,7 +47,7 @@ export const orderUpdate = async (req, res) => {
       return res.status(400).json({ error: "Please enter the token first" });
     }
     const { order_id, status } = req.body;
- console.log("=====")
+//
     const tokenData = jwt.verify(req.headers.token, process.env.JWT_SECRET);
     const existOrder = await orderModel.findOne({
       _id: order_id,
@@ -60,7 +60,7 @@ export const orderUpdate = async (req, res) => {
         },
         { $set: { status: status } }
       );
- console.log("====================================================")
+ 
       return res.status(200).json({
         status: 200,
         resmessage: "order status change successfully",
